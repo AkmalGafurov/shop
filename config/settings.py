@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
+    'user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [
@@ -170,3 +171,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     "user_avatar": None,
 
 # }
+
+AUTH_USER_MODEL = 'user.CustomUser'

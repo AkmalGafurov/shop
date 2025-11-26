@@ -3,7 +3,6 @@ from django.dispatch import receiver
 from .models import Product, Category
 
 
-print("[SIGNAL] signals.py yuklandi")
 
 @receiver(post_save, sender=Product)
 def product_saved_signal(sender, instance, created, **kwargs):

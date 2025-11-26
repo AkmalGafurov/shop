@@ -151,7 +151,11 @@
                             {% endif %}
 
                             <!-- Product image -->
-                            <img class="card-img-top" src="{{ related.image.url }}" alt="{{ related.name }}" />
+                            {% if related.image %}
+                                <img class="card-img-top" src="{{ related.image.url }}" alt="{{ related.name }}">
+                            {% else %}
+                                <img class="card-img-top" src="{% static 'app/images/no_image.png' %}" alt="No image">
+                            {% endif %}
 
                             <!-- Product details -->
                             <div class="card-body p-4">
