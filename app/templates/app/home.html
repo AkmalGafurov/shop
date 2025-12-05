@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {%load static%}
+{% load i18n %}
 
 {%block title%}
     Home
@@ -12,8 +13,8 @@
 <header class="bg-dark py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Shop in style</h1>
-            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+            <h1 class="display-4 fw-bolder">{% trans "Shop in style" %}</h1>
+            <p class="lead fw-normal text-white-50 mb-0">{% trans "With this shop hompeage template" %}</p>
         </div>
     </div>
 </header>
@@ -21,24 +22,24 @@
 
 <div class="container mt-5">
     <div class="text-left">
-        <h3>Filter by</h3>
+        <h3>{% trans "Filter by" %}</h3>
     </div>
     <div class="row">
         <div class="col-1">
-            <a class="btn btn-outline-dark mt-auto" href="?filter_type=expensive"> Expensive </a>
+            <a class="btn btn-outline-dark mt-auto" href="?filter_type=expensive">{% trans "Expensive" %}  </a>
         </div>
 
         <div class="col-1">
-            <a class="btn btn-outline-dark mt-auto" href="?filter_type=cheap"> Cheap </a>
+            <a class="btn btn-outline-dark mt-auto" href="?filter_type=cheap">{% trans "Cheap" %}  </a>
         </div>
 
         <div class="col-1">
-            <a class="btn btn-outline-dark mt-auto" href="{% url 'app:rating' %}"> Rating </a>
+            <a class="btn btn-outline-dark mt-auto" href="{% url 'app:rating' %}">{% trans "Rating" %}  </a>
         </div>
 
         {% if user.is_authenticated %}
             <div class="col-1">
-                <a class="btn btn-outline-dark mt-auto" href="{% url 'app:create'%}"> + New </a>
+                <a class="btn btn-outline-dark mt-auto" href="{% url 'app:create'%}">{% trans "+ New" %}  </a>
             </div>
         {%endif%}
 
